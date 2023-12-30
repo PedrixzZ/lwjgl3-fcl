@@ -20,10 +20,6 @@ jobs:
         distribution: temurin
         java-version: 8
 
-    - name: Build for Android ${{matrix.arch}}
-      run: |
-        bash ci_build_android.bash
-
     - name: Upload modules release output
       if: ${{matrix.arch == 'arm64'}} # Only upload this once
       uses: actions/upload-artifact@v1
